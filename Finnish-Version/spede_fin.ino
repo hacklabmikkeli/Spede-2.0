@@ -1,8 +1,10 @@
+// Käytettävät kirjastot
 #include <stdio.h>
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
 
+//Täältä voi pinnejä ja näyttömoduulin mallia vaihtaa itselleen parhaimmaksi
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
 #define MAX_DEVICES 8
 #define CLK_PIN   13
@@ -16,11 +18,11 @@ int button_values[] = {916, 431, 269, 180, 109};
 int btn_tol = 30;
 int analogValue_p1 = 0;
 int analogValue_p2 = 0;
-int pin_p1 = A0;
-int pin_p2 = A6;
-int leds_cnt = 5;
-int p1_leds[5] = {2,3,4,5,6};
-int p2_leds[5] = {A2,A3,A4,A5,A1};
+int pin_p1 = A0; // Pelaajan input portti, tästä saa vaihdettua.
+int pin_p2 = A6; // Pelaajan input portti, tästä saa vaihdettua.
+int leds_cnt = 5; // Jos haluaa useammamman painikkeen.
+int p1_leds[5] = {2,3,4,5,6}; //Tästä voi muuttaa esimerkiksi ledien järjestystä, jos olet kytkenyt kaiken kasaan ja fyysinen johtojen vaihtaminen ei onnistu.
+int p2_leds[5] = {A2,A3,A4,A5,A1}; //Tästä voi muuttaa esimerkiksi ledien järjestystä, jos olet kytkenyt kaiken kasaan ja fyysinen johtojen vaihtaminen ei onnistu.
 int LEDatButtonAtPlayer;
 int LEDvalueAtPlayer1;
 int LEDvalueAtPlayer2;
